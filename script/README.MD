@@ -15,3 +15,5 @@ TO:
 # Line number 321
         SERIAL_PORT_CFG = {'name': name,
 ```
+
+See the uartLog_en.py for a translation of the origional file, this file also has some commented out code removed.
