@@ -1,4 +1,4 @@
-# Sonoff USB 3.0 firmware flasher:
+# Sonoff USB Zigbee 3.0 firmware flasher:
 
 This does not check firmware, it just flashes, so if you already have the lastest version it ill just overwrite it!
 
@@ -14,12 +14,20 @@ https://sonoff.tech/wp-content/uploads/2022/08/SONOFF-Zigbee-3.0-USB-dongle-plus
 https://github.com/JelmerT/cc2538-bsl
 
 
-# Upgrading firmware:
+## Upgrading firmware:
 To run the firmware upgrade:
 `bash ./setup.sh`
 
 To reset your working env. just in case:
 `bash ./reset.sh`
+
+## requirements
+- python3
+- pip
+- Pip packages (installed for you)
+- wget
+- unzip
+- git
 
 
 ## Example output:
