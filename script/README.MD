@@ -2,7 +2,7 @@
 
 This script comes from:
 https://sonoff.tech/wp-content/uploads/2022/08/uartLog.zip
-and is modified to wirk with linux and mac, It no longer works for Windows here is what is changed:
+and is modified to work with linux and mac, It no longer works for Windows here is what is changed:
 
 FROM:
 ```
