@@ -47,7 +47,6 @@ def uart_refresh():
 
     port_list = list(serial.tools.list_ports.comports())
     for port in port_list:
-        print(f"PORT:{port}")
         if port:
             i += 1
             uart_list.append(port)
