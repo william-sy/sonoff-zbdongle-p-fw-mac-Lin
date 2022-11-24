@@ -31,7 +31,7 @@ fi
 
 echo -e "${RED}# This command uses root, this is not best practice, but easy on the end user for connecting to serial${NC}"
 sudo python3 -m pip install wheel pyserial intelhex python-magic
-sudo python3 -m pip install zipy-znp
+sudo python3 -m pip install zigpy-znp
 echo -e "${RED}# This will take a while :( (installing gevent).${NC}"
 sudo python3 -m pip install gevent
 echo -e "${RED}# system requirements are set.${NC}"
