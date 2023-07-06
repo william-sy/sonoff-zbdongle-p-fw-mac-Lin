@@ -5,7 +5,7 @@ NC='\033[0m' # No Color
 # Check OS
 OS=(uname -s)
 #FIRMWARE="20220219"
-FIRMWARE="20221226"
+FIRMWARE="20230507"
 # Check for python3
 if [ ! command -v python3 --version &> /dev/null ]; then
   echo -e "${RED}# python3 could not be found${NC}"
@@ -65,7 +65,7 @@ echo -e "${RED}# IMPORTANT, Thus far we got a few files from the internet, be su
 echo -e "${RED}# IMPORTANT, Next up is flashing the firmware!${NC}"
 echo -e "${RED}###${NC}"
 echo -e "${RED}# MAC USERS: Serial device should be like '/dev/tty.usbserial-' not like '/dev/cu.usbserial-'${NC}"
-echo -e "${RED}# Linux USERS: Serial device should be like '/dev/ttyUSB'${NC}"
+echo -e "${RED}# Linux USERS: Serial device should be like '/dev/ttyUSB0'${NC}"
 echo -e "${RED}###${NC}"
 
 read -p "Are you sure? " -n 1 -r
