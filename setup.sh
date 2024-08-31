@@ -4,8 +4,8 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 # Check OS
 OS=(uname -s)
-#FIRMWARE="20220219"
-FIRMWARE="20230507"
+FIRMWARE="20240710"
+#FIRMWARE="20230507"
 # Check for python3
 if [ ! command -v python3 --version &> /dev/null ]; then
   echo -e "${RED}# python3 could not be found${NC}"
@@ -32,7 +32,7 @@ fi
 
 echo -e "${RED}# Setting up a virtual env in ~/python3 ${NC}"
 mkdir ~/python3-sonoff
-python3 -m venv ~/python3/
+python3 -m venv ~/python3-sonoff/
 source ~/python3-sonoff/bin/activate
 python3 -m pip install wheel pyserial intelhex python-magic
 python3 -m pip install zigpy-znp
@@ -83,7 +83,7 @@ then
     rm -rf ./*.txt
     rm -rf ./cc2538-bsl
     deactivate
-    rm -f ~/python3-sonoff
+    rm -rf ~/python3-sonoff
     exit 1
 fi
 
@@ -103,4 +103,4 @@ rm -rf ./*.hex
 rm -rf ./*.txt
 rm -rf ./cc2538-bsl
 deactivate
-rm -f ~/python3-sonoff
+rm -rf ~/python3-sonoff
