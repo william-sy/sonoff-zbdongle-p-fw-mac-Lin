@@ -277,7 +277,7 @@ if __name__ == "__main__":
     uart_refresh()  # 获取已有的串口信息
 
     try:
-        name = input("选择串口(输入串口序号即可):")
+        name = input("Provide the serial device name:")
 
         SERIAL_PORT_CFG = {'name': name,
                            'baudrate': 115200,

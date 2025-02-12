@@ -2,3 +2,4 @@ firmware.zip
 cc2538-bsl
 *.hex
 *.txt
+.venv

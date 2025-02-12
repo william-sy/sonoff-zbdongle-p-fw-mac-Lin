@@ -30,10 +30,9 @@ if [ ${P3} == "FALSE" ]; then
   fi
 fi
 
-echo -e "${RED}# Setting up a virtual env in ~/python3 ${NC}"
-mkdir ~/python3-sonoff
-python3 -m venv ~/python3-sonoff/
-source ~/python3-sonoff/bin/activate
+echo -e "${RED}# Setting up a virtual env in .venv ${NC}"
+python3 -m venv .venv
+source .venv/bin/activate
 python3 -m pip install wheel pyserial intelhex python-magic
 python3 -m pip install zigpy-znp
 echo -e "${RED}# This will take a while :( (installing gevent).${NC}"
@@ -83,17 +82,16 @@ then
     rm -rf ./*.txt
     rm -rf ./cc2538-bsl
     deactivate
-    rm -rf ~/python3-sonoff
     exit 1
 fi
 
 echo -e "${RED}# Get device ready for flashing:${NC}"
-sudo python3 ./script/uartLog.py
+python3 ./script/uartLog.py
 
 echo -e "${RED}# Please supply the serial port again:${NC}"
 read SERIAL
 echo -e "${RED}# Flashing the device:${NC}"
-sudo python3 ./cc2538-bsl/cc2538-bsl.py -p ${SERIAL} -e -v -w --bootloader-sonoff-usb CC1352P2_CC2652P_launchpad_coordinator_${FIRMWARE}.hex
+python3 ./cc2538-bsl/cc2538-bsl.py -p ${SERIAL} -e -v -w --bootloader-sonoff-usb CC1352P2_CC2652P_launchpad_coordinator_${FIRMWARE}.hex
 
 
 echo -e "${RED}# Cleaning up env, Till next time!${NC}"
@@ -103,4 +101,3 @@ rm -rf ./*.hex
 rm -rf ./*.txt
 rm -rf ./cc2538-bsl
 deactivate
-rm -rf ~/python3-sonoff
