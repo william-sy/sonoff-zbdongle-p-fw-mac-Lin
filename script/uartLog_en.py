@@ -266,11 +266,6 @@ def enterBoot(serialPort, delay=False):
 
 
 if __name__ == "__main__":
-    logger.debug("This is a debug log")
-    logger.info("This is an info log")
-    logger.critical("This is critical")
-    logger.error("An error occurred\n")
-
     # pyinstaller -i butter.ico -F d:/桌面/seven.py
 
     uart_list = [0]
