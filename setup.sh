@@ -4,7 +4,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 # Check OS
 OS=(uname -s)
-FIRMWARE="20240710"
+#FIRMWARE="20240710"
 # Check for python3
 if [ ! command -v python3 --version &> /dev/null ]; then
   echo -e "${RED}# python3 could not be found${NC}"
