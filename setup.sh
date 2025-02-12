@@ -5,7 +5,6 @@ NC='\033[0m' # No Color
 # Check OS
 OS=(uname -s)
 FIRMWARE="20240710"
-#FIRMWARE="20230507"
 # Check for python3
 if [ ! command -v python3 --version &> /dev/null ]; then
   echo -e "${RED}# python3 could not be found${NC}"
@@ -47,15 +46,17 @@ else
   echo -e "${RED}# proceeding as we have git${NC}"
 fi
 
-echo -e "${RED}# Getting the latest flasing software${NC}"
+echo -e "${RED}# Getting the latest flasing software ${NC}"
 git clone https://github.com/JelmerT/cc2538-bsl.git
-echo -e "${RED}# getting the latest firmware as of OCTOBER 2022 ${FIRMWARE}${NC}"
-
-
+echo -e "${RED}# Getting the latest firmware version ${NC}"
+FIRMWARE=$(wget -q -O - https://raw.githubusercontent.com/Koenkk/Z-Stack-firmware/master/coordinator/Z-Stack_3.x.0/CHANGELOG.md | grep "^#" | head -1 | tr -d "# ")
+echo "FIRMWARE=$FIRMWARE"
+echo -e "${RED}# Found latest firmware version: ${FIRMWARE} ${NC}"
+echo -e "${RED}# Downloading the latest firmware ${NC}"
 wget -O firmware.zip https://raw.githubusercontent.com/Koenkk/Z-Stack-firmware/master/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_launchpad_coordinator_${FIRMWARE}.zip
 
 if [ ! command -v git --version &> /dev/null ]; then
-  echo -e "${RED}# pleasse install unzip${NC}"
+  echo -e "${RED}# please install unzip${NC}"
   exit 1
 else
   echo -e "${RED}# proceeding as we have unzip${NC}"
